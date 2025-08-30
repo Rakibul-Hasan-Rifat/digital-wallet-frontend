@@ -11,16 +11,17 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { ModeToggle } from "./ModeToggle"
+import { Link } from "react-router"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home", active: true },
-  { href: "#", label: "Features" },
-  { href: "#", label: "Pricing" },
-  { href: "#", label: "About" },
+  { href: "/", label: "Home", active: true },
+  { href: "/about", label: "About" },
+  { href: "/features", label: "Features" },
+  { href: "faqs", label: "FAQs" },
 ]
 
-export default function Component() {
+function Navbar() {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
@@ -106,10 +107,12 @@ export default function Component() {
         <div className="flex items-center gap-2">
           <ModeToggle />
           <Button asChild size="default" className="text-sm">
-            <a href="#" className="">Sign in</a>
+            <Link to={"/login"} className="">Sign in</Link>
           </Button>
         </div>
       </div>
     </header>
   )
 }
+
+export default Navbar;

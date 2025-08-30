@@ -1,14 +1,15 @@
 import './App.css'
-import { Button } from '@/components/ui/button'
-import Component from './components/layouts/Navbar'
+import Navbar from '@/components/layouts/Navbar'
+import { Outlet } from 'react-router'
 
 function App() {
 
   return (
     <>
-      <Component />
-      <h1>Vite + React</h1>
-      <Button>Click</Button>
+      <Navbar />
+      <div className='my-5'>
+        <Outlet />
+      </div>
     </>
   )
 }
